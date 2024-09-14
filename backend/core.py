@@ -7,8 +7,10 @@ load_dotenv()
 apiKey = os.getenv("MULTI_ON")
 
 multion = MultiOn(api_key=apiKey)
-browse = multion.browse(
-    cmd="Find the top comment of the top post on Hackernews.",
-    url="https://news.ycombinator.com/"
-)
-print("Browse response:", browse)
+
+def test_func():
+    browse = multion.browse(
+        cmd="Find the top comment of the top post on Hackernews.",
+        url="https://news.ycombinator.com/"
+    )
+    print("Browse response:", browse)
