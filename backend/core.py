@@ -8,9 +8,19 @@ apiKey = os.getenv("MULTI_ON")
 
 multion = MultiOn(api_key=apiKey)
 
-def test_func():
+def call_multion_and_run_heuristics(website_url):
     browse = multion.browse(
-        cmd="Find the top comment of the top post on Hackernews.",
-        url="https://news.ycombinator.com/"
+        cmd="Find Nielsen's heuristics feedback for criteria 1 for this website url",
+        url=website_url
     )
     print("Browse response:", browse)
+    return browse
+
+
+def give_actionable_feedback(website_url, heuristics_response):
+    browse = multion.browse(
+        cmd="Based on the heuristics for this website url",
+        url=website_url
+    )
+    print("Browse response:", browse)
+    return browse
