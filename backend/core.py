@@ -13,8 +13,11 @@ def call_multion_and_run_heuristics(website_url):
         cmd="Find Nielsen's heuristics feedback for criteria 1 for this website url",
         url=website_url
     )
-    print("Browse response:", browse)
-    return browse
+    if browse.status == 'DONE':
+        print("Browse response:", browse)
+        return browse
+    elif browse.status == 'ASK_USER':
+        return "Multi On ne Hagg diya. Omar you need to work harder :/"
 
 
 def give_actionable_feedback(website_url, heuristics_response):
