@@ -1,5 +1,9 @@
 from core import call_multion_and_run_heuristics, give_actionable_feedback
 from fastapi import APIRouter
+from pydantic import BaseModel
+
+class Website(BaseModel):
+    website_url: str
 
 app_router = APIRouter()
 
@@ -8,8 +12,8 @@ def health_check():
     return {"status": "ok"}
 
 @app_router.post("/run_heuristics")
-async def run_heuristics(wesbite_url: str):
-    call_multion_and_run_heuristics(wesbite_url)
+async def run_heuristics(data: Website):
+    call_multion_and_run_heuristics(data.website_url)
     return
 
 @app_router.post("/get_feedback")
