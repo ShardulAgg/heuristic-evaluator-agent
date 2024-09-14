@@ -19,7 +19,7 @@ def setup_fastapi():
     return app
 
 def onload():
-    debugpy.listen(("0.0.0.0", 5678))
+    debugpy.listen(("0.0.0.0", 5684))
     
 
 # Set up app

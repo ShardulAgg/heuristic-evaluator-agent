@@ -5,3 +5,4 @@ isort
 websockets
 pydantic
 debugpy
+multion

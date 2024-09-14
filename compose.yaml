@@ -12,8 +12,8 @@ services:
       PORT: 80
       MAX_WORKERS: 1
     ports:
-      - '80:80'
-      - '5678:5678'
+      - '8082:8082'
+      - '5684:5684'
     volumes:
       - ./backend:/app
     command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
